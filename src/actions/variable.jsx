@@ -3,7 +3,7 @@ import {CHANGE_VARIABLE} from "./type"
 // console.log(base_url,"base")
 // export const base_url = "https://starfish-app-kubrm.ondigitalocean.app"
 // export const base_url = "https://gohworldapi.onrender.com"
-export const base_url = "http://localhost:3000"
+export const base_url = "https://cheetasapi-production.up.railway.app"
 export const changeVariable = (key, value) => {
 
     return ({
