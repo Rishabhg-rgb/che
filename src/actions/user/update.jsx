@@ -17,7 +17,8 @@ export const updateUserHelper = async ({ data, dispatch,state }) => {
         name:name,
         email:email,
         phone:phone,
-        subscriptionType:data.subscriptionType
+        subscriptionType:data.subscriptionType,
+        subscriptionStartDate:data.subscriptionStartDate
     })
     const config = {
         headers,

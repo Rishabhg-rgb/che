@@ -11,10 +11,19 @@ const FormLayout = ({
   updateUser
 }) => {
 
+
+  const formatDate = (isoString) => {
+    const date = isoString
+    const day = (`0${date.getDate()}`).slice(-2);
+    const month = (`0${date.getMonth() + 1}`).slice(-2);
+    const year = date.getFullYear();
+    return `${month}-${day}-${year}`;
+  };
   const [state, setState] = useState({
     name: "",
     email: "",
     phone: "",
+    subscriptionStartDate: "",
     subscriptionType: ""
   })
 
@@ -28,9 +37,10 @@ const FormLayout = ({
       name: userData.name,
       email: userData.email,
       phone: userData.phone,
+      subscriptionStartDate: userData.subscriptionStartDate,
       subscriptionType: userData.subscriptionType
     })
-    console.log(state, "here state",userData)
+    console.log(state, "here state", userData)
   }, [userData])
 
 
@@ -90,6 +100,19 @@ const FormLayout = ({
                   onChange={(e) => { handleChange(e) }}
                   value={state.phone}
                   name='phone'
+                  placeholder="Enter Phone"
+                  className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                />
+              </div>
+              <div className="mb-4.5">
+                <label className="mb-2.5 block text-black dark:text-white">
+                  Subscription start Date
+                </label>
+                <input
+                  type="date"
+                  onChange={(e) => { handleChange(e) }}
+                  value={state.subscriptionStartDate&&state.subscriptionStartDate.split("T")[0]}
+                  name='subscriptionStartDate'
                   placeholder="Enter Phone"
                   className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
                 />

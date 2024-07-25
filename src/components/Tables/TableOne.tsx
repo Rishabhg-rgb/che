@@ -140,7 +140,7 @@ const TableOne = ({
             </div>
 
             <div className="hidden items-center justify-center p-2.5 sm:flex xl:p-5">
-              <p className="text-meta-5">{new Date(value.startDate).toDateString()}</p>
+              <p className="text-meta-5">{new Date(value.subscriptionStartDate).toDateString()}</p>
             </div>
             <div className="hidden items-center justify-center p-2.5 sm:flex xl:p-5">
 
